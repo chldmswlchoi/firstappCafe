@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/select_cafe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#0A673AB7"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="15dp"
+                android:id="@+id/iv_profile"
+                android:src="@drawable/location"/>
+
+            <TextView
+                android:id="@+id/cafe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="카페명"
+                android:layout_gravity="center_vertical"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="15dp"
+
+                />
+
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:layout_marginStart="60dp"
+            android:textSize="17sp"
+            android:id="@+id/road_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="주소"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="15dp"
+            />
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+</LinearLayout>

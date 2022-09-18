@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cafe.FragmentCafeReview">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="작성자의 카페 추천 이유"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#FF9800"
+            >
+
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/cafe1"
+                android:outlineProvider="bounds"
+
+                />
+
+            <TextView
+                android:id="@+id/review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="카페 한 줄 소개"
+                android:textColor="#FF9800"
+                android:textSize="14dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+
+
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#27FFCD60" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="유저들의 리뷰"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintHeight_max="200dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/review_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:scrollbars="vertical" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:indeterminateTint="#FFC107" />
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#27FFCD60"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:id="@+id/cafe_image"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            />-->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+           android:layout_margin="10dp"
+            android:id="@+id/parent"
+
+            >
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ratingBar"
+                android:padding="7dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@android:style/Widget.Holo.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/etreview"
+                android:isIndicator="false"
+                android:numStars="5"
+                android:progressTint="#FFC107"
+                android:rating="3"
+                android:stepSize="0.5" />
+
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="-47dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="-108dp"
+                android:layout_toStartOf="@+id/maxText"
+                android:background="@drawable/image"
+                android:backgroundTint="#959595" />
+
+            <TextView
+                android:id="@+id/maxText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/etreview"
+                android:text="0/400"
+
+                />
+
+            <EditText
+                android:id="@+id/etreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/only_rounded"
+                android:hint="리뷰 작성하기"
+                android:lines="5"
+                android:maxLength="400"
+                android:scrollbars="vertical"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/modify"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:layout_alignRight="@+id/etreview"
+                android:layout_alignBottom="@+id/etreview"
+                android:layout_marginRight="75dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/rounded"
+                android:text="수정"
+                android:textSize="10sp"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/register"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:layout_alignRight="@+id/modify"
+                android:layout_alignBottom="@+id/etreview"
+                android:layout_marginRight="-73dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/rounded"
+                android:text="등록"
+                android:textSize="10sp" />
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

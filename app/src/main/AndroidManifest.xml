@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.test_retrofit">
+
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 읽기 쓰기 권한 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Test_retrofit"
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode="adjustResize">
+        <activity
+            android:name=".chat.ActivityChatRoom"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+        <activity
+            android:name=".cafe.ActivityCafeContent"
+            android:exported="false" />
+        <activity
+            android:name=".cafe.ActivityModifyCafe"
+            android:exported="false" />
+        <activity
+            android:name=".cafe.Activity_dessertList"
+            android:exported="false" />
+        <activity
+            android:name=".cafe.Activity_madeCafe1"
+            android:exported="false" />
+        <activity
+            android:name=".group.Activity_findCafe"
+            android:exported="false" />
+        <activity
+            android:name=".group.Activity_updateGroup"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityFirstLoading"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".group.ActivityGroupContent"
+            android:exported="false" />
+        <activity
+            android:name=".group.Activity_madeGroup"
+            android:exported="false" />
+        <activity
+            android:name=".FragmentMypage"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".user.email_pw.ChangepwActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityHome"
+            android:exported="false" />
+        <activity
+            android:name=".user.email_pw.Activity_findPW"
+            android:exported="false" />
+        <activity
+            android:name=".user.Activity_signup"
+            android:exported="false" />
+        <activity
+            android:name=".user.ActivityLogin"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="1z46sbq8ob" />
+    </application
+        >
+
+</manifest>

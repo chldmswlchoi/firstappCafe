@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.285" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/drawable-v24/only_rounded.xml" value="0.2885" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/drawable/bg_indicator_active.xml" value="0.1" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/drawable/bg_indicator_inactive.xml" value="0.1" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/drawable/gradation.xml" value="0.29" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/drawable/ic_launcher_background.xml" value="0.285" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/drawable/image_rounded.xml" value="0.17" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/drawable/rouded.xml" value="0.2645" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/drawable/rounded.xml" value="0.2645" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/drawable/toggle_love_button.xml" value="0.17" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_cafe_content.xml" value="0.22" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_changepw.xml" value="0.2" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_chat_room.xml" value="0.25" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_create_cafe.xml" value="0.28894927536231885" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_dessert_list.xml" value="0.3536458333333333" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_find_cafe.xml" value="0.2" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_find_cafe2.xml" value="0.3359375" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_findpw.xml" value="0.33" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_first.xml" value="0.33" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_group_content.xml" value="0.13030746705710103" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_group_list_fragment.xml" value="0.31614583333333335" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_made_cafe1.xml" value="0.25" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_made_group.xml" value="0.33" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_main2.xml" value="0.25" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_modify_cafe.xml" value="0.22" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_modify_cafe2.xml" value="0.3536458333333333" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_mypage.xml" value="0.2128623188405797" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_place_result_items.xml" value="0.3359375" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_register.xml" value="0.3359375" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/activity_update_group.xml" value="0.33" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/bg_indicator_active.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/fragment_blank.xml" value="0.3359375" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/fragment_cafe_detail_data.xml" value="0.5" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/fragment_cafe_home.xml" value="0.25" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/fragment_cafe_review.xml" value="0.33" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/fragment_first.xml" value="0.253125" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/fragment_group_list.xml" value="0.25" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/fragment_join_group.xml" value="0.3359375" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/fragment_like.xml" value="0.33" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/fragment_my_group.xml" value="0.3359375" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/fragment_mypage.xml" value="0.31197916666666664" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/group_items.xml" value="0.67" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/item_cafe.xml" value="0.2929936305732484" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/item_cafe_review.xml" value="0.5" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/item_center_join.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/item_join_group.xml" value="0.33" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/item_left_chat.xml" value="0.33" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/item_right_chat.xml" value="0.5" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/itemslider.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/layout_sub_layout.xml" value="0.18" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/multi_image_item.xml" value="0.5" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/my_group_item.xml" value="0.33" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/layout/rouded.xml" value="0.3125" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/menu/bottom_navigation.xml" value="0.25" />
+        <entry key="..\:/Users/Choi-Eunji/AndroidStudioProjects/test_retrofit/app/src/main/res/xml/network_security_config.xml" value="0.16044399596367306" />
+        <entry key="..\:/Users/Choi-Eunji/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.3020833333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.18" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

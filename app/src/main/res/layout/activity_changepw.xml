@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00878484"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="비밀번호 재설정"
+        android:textColor="#000000"
+        android:textSize="29sp" />
+
+    <EditText
+        android:id="@+id/etpassword"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#2FA9A9A9"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        android:paddingLeft="5dp" />
+
+    <TextView
+        android:id="@+id/password_check"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text=""
+        android:textColor="#3F51B5"
+        android:paddingLeft="5dp"/>
+
+    <EditText
+        android:id="@+id/etpassword2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+
+        android:layout_marginRight="20dp"
+        android:background="#2FA9A9A9"
+        android:hint="비밀번호 확인"
+        android:inputType="textPassword"
+        android:paddingLeft="5dp" />
+
+    <TextView
+        android:id="@+id/password2_check"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text=""
+        android:textColor="#3F51B5"
+        android:paddingLeft="5dp"/>
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="등록하기"
+        android:textColor="#fff"
+        />
+
+
+
+
+</LinearLayout>
+
+
+
+
+
