@@ -50,6 +50,9 @@ public class ActivityChatRoom extends AppCompatActivity {
     private Handler chatHandler;
 
     private final int HANDLERWHAT = 1111;
+
+    //방나누기 할 때 필요한 모임 식별값
+    private int id_meeting;
     @SuppressLint("HandlerLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +66,8 @@ public class ActivityChatRoom extends AppCompatActivity {
         preferenceHelper = new PreferenceHelper(this);
         chatList = new ArrayList<>();
 
+        id_meeting = getIntent().getIntExtra("id_meeting",-1);
+
         //어댑터와 리사이클러뷰 바인드 해주는 과정
 
         linearLayoutManager = new LinearLayoutManager(this);
@@ -74,7 +79,7 @@ public class ActivityChatRoom extends AppCompatActivity {
 
 
 
-        //소켓으로 받은 채팅 메시지를 처리하는 곳
+        //소켓으로 받은 채팅 메시지를 리사이클려뷰에 아이템 추가해서 ui 변경해주기
         chatHandler = new Handler(Looper.getMainLooper()){
             @SuppressLint("HandlerLeak")
             @Override
@@ -96,7 +101,7 @@ public class ActivityChatRoom extends AppCompatActivity {
         };
 
         if(true) {
-            thread = new ConnectionThread(preferenceHelper.getNickname(),chatHandler);
+            thread = new ConnectionThread(preferenceHelper.getNickname(),chatHandler,id_meeting);
             thread.start();
         } else {Log.e(TAG,"isConnect == True");}
 

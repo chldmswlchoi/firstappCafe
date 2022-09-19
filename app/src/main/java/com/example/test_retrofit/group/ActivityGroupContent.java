@@ -289,8 +289,10 @@ public class ActivityGroupContent extends AppCompatActivity implements OnMapRead
             if (jsonObject.getString("status").equals("true")) {
 
                 Toast.makeText(ActivityGroupContent.this, message, Toast.LENGTH_LONG).show();
-//                참가 완료되었다는 문구 띄워지면 -> db에 저장이 된것임
+                //참가 완료되었다는 문구 띄워지면 -> db에 저장이 된것임
+                //db에 참가 정보가 저장이 완료가 되면 채팅방 액티비티로 이동
                 Intent intent = new Intent(this, ActivityChatRoom.class);
+                intent.putExtra("id_meeting",id_meeting);
                 startActivity(intent);
                 finish();
 

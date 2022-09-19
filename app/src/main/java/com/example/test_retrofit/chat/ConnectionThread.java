@@ -15,12 +15,14 @@ public class ConnectionThread extends Thread{
     private ThreadReceiver receiverThread;
     private Socket socket;
     private String nickname;
-
     private Handler chatHandler;
+    private int id_meeting;
 
-    ConnectionThread(String nickname, Handler chatHandler){
+    ConnectionThread(String nickname, Handler chatHandler, int id_meeting){
         this.nickname = nickname;
         this.chatHandler= chatHandler;
+        this.id_meeting = id_meeting; //모임 고유 아이디 값 -> 채팅방 방나눌 때 기준이 되는 숫자임
+
     }
 
     public void run(){
@@ -36,7 +38,7 @@ public class ConnectionThread extends Thread{
                 Log.e(TAG,"서버 접속 성공");
                 Log.e(TAG,"sendThread에 닉네임 넘겨주기");
                 PrintWriter writer = new PrintWriter(socket.getOutputStream(),true);
-                writer.println(nickname);
+                writer.println(nickname+"#"+id_meeting);
                 writer.flush();
                 //메시지를 받는 스레드 생성 및 시작
                 receiverThread = new ThreadReceiver(socket,chatHandler);
