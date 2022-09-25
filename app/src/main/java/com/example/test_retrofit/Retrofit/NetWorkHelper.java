@@ -1,4 +1,4 @@
-package com.example.test_retrofit.cafe;
+package com.example.test_retrofit.Retrofit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

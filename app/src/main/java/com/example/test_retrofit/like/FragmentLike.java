@@ -14,18 +14,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import com.example.test_retrofit.R;
 import com.example.test_retrofit.cafe.ActivityCafeContent;
-import com.example.test_retrofit.cafe.Activity_dessertList;
 import com.example.test_retrofit.cafe.AdapterDessertList;
 import com.example.test_retrofit.cafe.DTOCafe;
-import com.example.test_retrofit.cafe.NetWorkHelper;
-import com.example.test_retrofit.group.AdapterGroup;
+import com.example.test_retrofit.Retrofit.NetWorkHelper;
 import com.example.test_retrofit.user.PreferenceHelper;
 
 import java.util.ArrayList;
@@ -39,7 +34,6 @@ public class FragmentLike extends Fragment {
 
     private View view;
     private final String TAG = this.getClass().getSimpleName();
-
 
     private AdapterDessertList adapterDessertList;
     private RecyclerView recyclerView;
@@ -123,7 +117,7 @@ public class FragmentLike extends Fragment {
             @Override
             public void toggleLoveButton(View v, int position) {
                 String p = String.valueOf(position);
-                Toast.makeText(getContext(), p, Toast.LENGTH_LONG).show();
+//                Toast.makeText(getContext(), p, Toast.LENGTH_LONG).show();
 //               서버에 보낼 게시글의 고유 아이디, 좋아요 여부 상태 리스트로부터 값 받아 초기화 하기
                 Integer cafe_id = cafeLikeList.get(position).getId_cafe();
                 is_loved = cafeLikeList.get(position).getIs_loved();
@@ -219,8 +213,9 @@ public class FragmentLike extends Fragment {
     private void generateDataList(List<DTOCafe.CafeData> items) {
         Log.e(TAG, "items" + items);
         cafeLikeList.clear();
-        for (int i = 0; i < items.size(); i++) {
-            cafeLikeList.add(items.get(i));
+        for (int i = items.size(); i > 0; i--) {
+
+            cafeLikeList.add(items.get(i-1));
         }
         adapterDessertList.notifyDataSetChanged();
     }

@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.test_retrofit.R;
+import com.example.test_retrofit.Retrofit.NetWorkHelper;
 import com.example.test_retrofit.user.PreferenceHelper;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.geometry.Tm128;
@@ -25,7 +26,6 @@ import com.naver.maps.map.CameraPosition;
 import com.naver.maps.map.CameraUpdate;
 import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.NaverMap;
-import com.naver.maps.map.NaverMapOptions;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.util.MarkerIcons;

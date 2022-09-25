@@ -104,7 +104,6 @@ public class AdapterDessertList extends RecyclerView.Adapter<AdapterDessertList.
 
     public interface OnItemClickListener {
         void onItemClick(View v, int position);
-
         void toggleLoveButton(View v, int position);
     }
 

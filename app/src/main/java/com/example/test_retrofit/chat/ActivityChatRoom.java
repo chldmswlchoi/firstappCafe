@@ -51,6 +51,9 @@ public class ActivityChatRoom extends AppCompatActivity {
 
     private final int HANDLERWHAT = 1111;
 
+    //이미 모임에 참여한 멤버인 경우 -> 채팅방 리스트 클릭을 통해 채팅방에 입장한 경우
+    private String isMember;
+
     //방나누기 할 때 필요한 모임 식별값
     private int id_meeting;
     @SuppressLint("HandlerLeak")
@@ -65,18 +68,16 @@ public class ActivityChatRoom extends AppCompatActivity {
         recyclerView = findViewById(R.id.chat_list);
         preferenceHelper = new PreferenceHelper(this);
         chatList = new ArrayList<>();
-
         id_meeting = getIntent().getIntExtra("id_meeting",-1);
 
         //어댑터와 리사이클러뷰 바인드 해주는 과정
-
         linearLayoutManager = new LinearLayoutManager(this);
-
         recyclerView.setLayoutManager(linearLayoutManager);
         adapterChat = new AdapterChat(chatList);
         recyclerView.setAdapter(adapterChat);
-        Log.e(TAG,"onCreate");
 
+        isMember = getIntent().getStringExtra("isMember");
+        Log.e(TAG,"onCreate");
 
 
         //소켓으로 받은 채팅 메시지를 리사이클려뷰에 아이템 추가해서 ui 변경해주기
@@ -91,19 +92,39 @@ public class ActivityChatRoom extends AppCompatActivity {
                     String [] type = msg.obj.toString().split("#");
                     Log.e(TAG, Arrays.toString(type));
 
-                    chatList.add(new ItemChat(type[2],type[1],
-                            "오후 2:00",Integer.parseInt(type[0])));
-                    adapterChat.notifyItemInserted(chatList.size());
-                    recyclerView.scrollToPosition(chatList.size()-1);
-                }
+                    if(Integer.parseInt(type[0]) == ViewType.CENTER_JOIN){ // 입장 또는 퇴장일 경우 viewType =0
+                        chatList.add(new ItemChat(type[1],null,
+                                null,Integer.parseInt(type[0]),null));
+                        adapterChat.notifyItemInserted(chatList.size());
+                        recyclerView.scrollToPosition(chatList.size()-1);
+                    }
 
+                    else if (Integer.parseInt(type[0]) == ViewType.RIGHT_CHAT)
+                    { // 내가 보낸 메시지인 경우 viewtype = 1
+                        Log.e("handleMessage ","RightChat");
+                        chatList.add(new ItemChat(type[2],null,
+                                type[4],Integer.parseInt(type[0]),null));
+                        adapterChat.notifyItemInserted(chatList.size());
+                        recyclerView.scrollToPosition(chatList.size()-1);
+                    }
+
+                    else { // 다른 사람이 보낸 메시지인 경우 viewtype =2
+                        Log.e("handleMessage ","LeftChat");
+                        chatList.add(new ItemChat(type[2], type[1],
+                                type[4], Integer.parseInt(type[0]), type[3]));
+                        adapterChat.notifyItemInserted(chatList.size());
+                        recyclerView.scrollToPosition(chatList.size() - 1);
+                    }
+                }
             }
         };
 
-        if(true) {
-            thread = new ConnectionThread(preferenceHelper.getNickname(),chatHandler,id_meeting);
+        if(!"yes".equals(isMember)) {
+            isMember = "no";
+        }
+            thread = new ConnectionThread(preferenceHelper.getNickname(),preferenceHelper.getID(),chatHandler,id_meeting,isMember);
             thread.start();
-        } else {Log.e(TAG,"isConnect == True");}
+
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,13 +134,12 @@ public class ActivityChatRoom extends AppCompatActivity {
                         mySocket.close();
                     } catch (IOException e) {
                         e.printStackTrace();
-
                     }
                 }
                 else{
                     if(!chat.getText().toString().isEmpty()) {
                         ThreadSender threadSender = new ThreadSender(mySocket,
-                                chat.getText().toString() + "#");
+                                chat.getText().toString() ,preferenceHelper.getProfile());
                         threadSender.start();
                         chat.setText("");
                     }

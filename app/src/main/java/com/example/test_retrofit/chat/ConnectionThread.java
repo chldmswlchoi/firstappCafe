@@ -8,20 +8,33 @@ import java.io.DataOutputStream;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class ConnectionThread extends Thread{
 
     private final String TAG = this.getClass().getSimpleName();
     private ThreadReceiver receiverThread;
     private Socket socket;
-    private String nickname;
+    private String nickname,id;
     private Handler chatHandler;
     private int id_meeting;
 
-    ConnectionThread(String nickname, Handler chatHandler, int id_meeting){
+    private long now;
+    private Date date;
+    private SimpleDateFormat Dsdf, sdf;
+    private String getTime,getDetailTime;
+
+    //이미 모임에 참여한 멤버인지 여부를 알 수 있게 하는 변수
+    private String isMember = "no";
+
+    ConnectionThread(String nickname,String id, Handler chatHandler, int id_meeting, String isMemgber){
         this.nickname = nickname;
+        this.id = id;
         this.chatHandler= chatHandler;
         this.id_meeting = id_meeting; //모임 고유 아이디 값 -> 채팅방 방나눌 때 기준이 되는 숫자임
+        this.isMember = isMemgber;
 
     }
 
@@ -33,12 +46,18 @@ public class ConnectionThread extends Thread{
                 //로컬 호스트의 주소를 가져온다.
                 socket = new Socket("3.39.153.170",9000);
                 ActivityChatRoom.mySocket = socket;
-
                 // 클라이언트의 소켓 객체 생성
                 Log.e(TAG,"서버 접속 성공");
                 Log.e(TAG,"sendThread에 닉네임 넘겨주기");
+                now = System.currentTimeMillis();
+                date = new Date(now);
+                Dsdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.KOREA);
+                sdf = new SimpleDateFormat("a H:mm", Locale.KOREA);
+                getDetailTime = Dsdf.format(date);
+                getTime= sdf.format(date);
                 PrintWriter writer = new PrintWriter(socket.getOutputStream(),true);
-                writer.println(nickname+"#"+id_meeting);
+                writer.println(nickname+"#"+id_meeting+"#"+isMember+"#"+id
+                        +"#"+getTime+"#"+getDetailTime);
                 writer.flush();
                 //메시지를 받는 스레드 생성 및 시작
                 receiverThread = new ThreadReceiver(socket,chatHandler);

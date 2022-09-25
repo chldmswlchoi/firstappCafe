@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.test_retrofit.R;
+import com.example.test_retrofit.Retrofit.NetWorkHelper;
 import com.example.test_retrofit.group.DTO.DTOMessage;
 import com.example.test_retrofit.user.PreferenceHelper;
 

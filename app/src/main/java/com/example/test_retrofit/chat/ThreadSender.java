@@ -1,5 +1,6 @@
 package com.example.test_retrofit.chat;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 import androidx.annotation.UiThread;
@@ -12,17 +13,25 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class ThreadSender extends Thread {
     private final String TAG = this.getClass().getSimpleName();
     private Socket socket;
     private String message;
-
+    private String profile_name,getTime,getDetailTime;
     private PrintWriter writer;
+    private long now;
+    private Date date;
+    private SimpleDateFormat Dsdf, sdf;
 
-    ThreadSender(Socket socket, String message) {
+
+    ThreadSender(Socket socket, String message, String profile_name) {
         this.socket = socket;
         this.message = message;
+        this.profile_name = profile_name;
         try {
             writer = new PrintWriter(socket.getOutputStream(), true);
         } catch (IOException e) {
@@ -34,15 +43,20 @@ public class ThreadSender extends Thread {
 
     }
 
+    @SuppressLint("SimpleDateFormat")
     public void run() {
         try {
             Log.e(TAG, "ThreadSender");
             if (writer != null) {
                 if (message != null) {
-
-                    writer.println(message);
+                    now = System.currentTimeMillis();
+                    date = new Date(now);
+                    Dsdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.KOREA);
+                    sdf = new SimpleDateFormat("a H:mm", Locale.KOREA);
+                    getDetailTime = Dsdf.format(date);
+                    getTime= sdf.format(date);
+                    writer.println(message+"#"+profile_name+"#"+getTime+"#"+getDetailTime);
                     writer.flush();}
-
             }
 
         } catch (Exception e) {

@@ -204,7 +204,7 @@ public class FragmentGroupList extends Fragment {
                         Log.e(TAG, "응답 성공 후 dto 파싱해준 값2" + items);
                         generateDataList(items);
                     } else {
-                        EmptyDialog("오류가 발생하였습니다 다시 시도해주세요");
+//                        EmptyDialog("오류가 발생하였습니다 다시 시도해주세요");
                     }
                 } else {
                     Log.e(TAG, "실패" + response.body());

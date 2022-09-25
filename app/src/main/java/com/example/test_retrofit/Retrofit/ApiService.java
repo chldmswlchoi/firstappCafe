@@ -1,5 +1,8 @@
-package com.example.test_retrofit.cafe;
+package com.example.test_retrofit.Retrofit;
 
+import com.example.test_retrofit.cafe.DTOCafe;
+import com.example.test_retrofit.cafe.DTOReview;
+import com.example.test_retrofit.chat.DTOChat;
 import com.example.test_retrofit.group.DTO.DTOMessage;
 
 import java.util.ArrayList;
@@ -19,6 +22,30 @@ import retrofit2.http.PartMap;
 import retrofit2.http.Query;
 
 public interface ApiService {
+
+
+    @Headers("Accept: application/json")
+    @GET("test/chat/read_chat_message.php")
+//    () 안에 디테일한 url 주소 설정
+    Call<DTOChat> getChatMessage(
+            //페이징 하기 위해서 필요한 page,limit
+//            @Query("page") Integer page,
+//            @Query("limit") Integer limit,
+            @Query("id") String id, // 로그인 한 유저 -> 유저가 참여한 채팅방 불러오기 위해서
+            @Query("id_meeting") int id_meeting
+    );
+
+
+
+    @Headers("Accept: application/json")
+    @GET("test/chat/read_chatList.php")
+//    () 안에 디테일한 url 주소 설정
+    Call<DTOChat> getChatList(
+            //페이징 하기 위해서 필요한 page,limit
+//            @Query("page") Integer page,
+//            @Query("limit") Integer limit,
+            @Query("id") String id // 로그인 한 유저 -> 유저가 참여한 채팅방 불러오기 위해서
+    );
 
     @Headers("Accept: application/json")
     @Multipart

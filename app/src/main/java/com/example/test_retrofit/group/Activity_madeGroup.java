@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -43,6 +44,7 @@ public class Activity_madeGroup extends AppCompatActivity {
     EditText title, cafe, dateText, time, people;
     View location, calendar, clock;
     Button register;
+    private ImageView gallery, chat_image;
 
     DatePickerDialog datePicker;
     TimePickerDialog timePicker;
@@ -71,10 +73,8 @@ public class Activity_madeGroup extends AppCompatActivity {
         calendar = findViewById(R.id.calendar);
         clock = findViewById(R.id.clock);
         register = findViewById(R.id.register);
-
-
-
-
+//        gallery = findViewById(R.id.gallery);
+//        chat_image = findViewById(R.id.chat_image);
 
         // 카페 검색해서 클릭한 결과물 받아와서 et 에 세팅 해주는 과정
 

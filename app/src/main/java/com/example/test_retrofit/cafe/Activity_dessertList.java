@@ -14,9 +14,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.test_retrofit.R;
+import com.example.test_retrofit.Retrofit.NetWorkHelper;
 import com.example.test_retrofit.user.PreferenceHelper;
 
 import java.util.ArrayList;
@@ -144,7 +144,7 @@ public class Activity_dessertList extends AppCompatActivity {
             @Override
             public void toggleLoveButton(View v, int position) {
                 String p = String.valueOf(position);
-                Toast.makeText(Activity_dessertList.this, p, Toast.LENGTH_LONG).show();
+//                Toast.makeText(Activity_dessertList.this, p, Toast.LENGTH_LONG).show();
 //               서버에 보낼 게시글의 고유 아이디, 좋아요 여부 상태 리스트로부터 값 받아 초기화 하기
                 Integer cafe_id = dessertList.get(position).getId_cafe();
                 is_loved = dessertList.get(position).getIs_loved();

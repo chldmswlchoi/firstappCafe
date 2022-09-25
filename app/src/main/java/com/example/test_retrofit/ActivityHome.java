@@ -15,6 +15,7 @@ import com.example.test_retrofit.FragmentMypage;
 import com.example.test_retrofit.R;
 
 import com.example.test_retrofit.cafe.FragmentCafeHome;
+import com.example.test_retrofit.chat.FragmentChatList;
 import com.example.test_retrofit.group.FragmentGroupList;
 import com.example.test_retrofit.group.FragmentMyGroup;
 import com.example.test_retrofit.group.Fragment_joinGroup;
@@ -53,6 +54,7 @@ public class ActivityHome extends AppCompatActivity {
         Fragment fragment_join_group = new Fragment_joinGroup();
         Fragment fragment_cafe = new FragmentCafeHome();
         Fragment fragment_like = new FragmentLike();
+        Fragment fragment_chat = new FragmentChatList();
 
 //        제일 처음 띄워줄 뷰를 세팅해준다. .commit()까지 해줘야 한다.
         if(select != null)
@@ -146,7 +148,14 @@ public class ActivityHome extends AppCompatActivity {
                     case R.id.likeItem:
                         Log.e(TAG, "nv바 좋아요 클릭");
                         getSupportFragmentManager().beginTransaction().replace(R.id.group_list,fragment_like).commitAllowingStateLoss();
-                        Log.e(TAG, "카페 클릭 후 프레그먼트 교체");
+                        Log.e(TAG, "좋아요 클릭 후 프레그먼트 교체");
+                        group_select.setVisibility(View.GONE);
+                        return  true;
+
+                    case R.id.chatItem:
+                        Log.e(TAG, "nv바 채팅 리스트 클릭");
+                        getSupportFragmentManager().beginTransaction().replace(R.id.group_list,fragment_chat).commitAllowingStateLoss();
+                        Log.e(TAG, "채팅 클릭 후 프레그먼트 교체");
                         group_select.setVisibility(View.GONE);
                         return  true;
 

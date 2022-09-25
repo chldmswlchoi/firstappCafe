@@ -157,12 +157,14 @@
             android:layout_height="40dp"
             android:layout_marginEnd="20dp"
             android:background="#2FA9A9A9"
-            android:hint="인원수 (2 ~20)"
+            android:hint="모집 할 인원수 (2 ~20)"
             android:paddingLeft="5dp"
             android:inputType="number"
             />
 
     </LinearLayout>
+
+
 
     <TextView
         android:layout_width="match_parent"
@@ -174,8 +176,43 @@
         android:textColor="#3E2807"
         android:paddingLeft="5dp"/>
 
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        >-->
 
+<!--        <ImageView-->
+<!--            android:id="@+id/gallery"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:background="@drawable/group_image"-->
 
+<!--            />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/chat_image"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:background="#2FA9A9A9"-->
+<!--            android:paddingLeft="5dp"-->
+<!--            />-->
+
+<!--    </LinearLayout>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="25dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginLeft="60dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:text="채팅방 대표 이미지를 선택해주세요"-->
+<!--        android:textColor="#3E2807"-->
+<!--        android:paddingLeft="5dp"/>-->
 <View
     android:layout_width="match_parent"
     android:layout_height="0dp"

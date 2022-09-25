@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.example.test_retrofit.MyDialog;
 import com.example.test_retrofit.R;
+import com.example.test_retrofit.Retrofit.NetWorkHelper;
 import com.example.test_retrofit.group.Activity_findCafe;
 
 import org.json.JSONException;
@@ -42,7 +43,6 @@ import java.util.HashMap;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
-import okhttp3.Request;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;

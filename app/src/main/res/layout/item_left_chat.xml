@@ -9,14 +9,12 @@
     android:layout_marginBottom="10dp"
     >
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="이름"
-        android:textColor="@color/black"
-        android:textSize="12sp"
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,8 +22,9 @@
         android:id="@+id/content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/only_rounded"
         android:paddingLeft="16dp"
         android:paddingTop="4dp"
         android:paddingRight="16dp"
@@ -33,21 +32,31 @@
         android:text="상대방이 보낸 메세지"
         android:textColor="#333d4b"
         android:textSize="12sp"
-        android:background="@drawable/only_rounded"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:text="이름"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/profile"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="4dp"
         android:text="00:00"
         android:textColor="#b9bcce"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/content"
-        app:layout_constraintStart_toEndOf="@+id/content"
-        android:visibility="invisible"
-        />
+        app:layout_constraintStart_toEndOf="@+id/content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

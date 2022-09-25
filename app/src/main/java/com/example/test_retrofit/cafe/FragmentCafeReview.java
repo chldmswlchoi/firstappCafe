@@ -35,6 +35,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.test_retrofit.MyDialog;
 import com.example.test_retrofit.R;
+import com.example.test_retrofit.Retrofit.NetWorkHelper;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

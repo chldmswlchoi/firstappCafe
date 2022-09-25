@@ -1,14 +1,11 @@
 package com.example.test_retrofit.cafe;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.ClipData;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -29,6 +26,7 @@ import android.widget.Toast;
 
 import com.example.test_retrofit.MyDialog;
 import com.example.test_retrofit.R;
+import com.example.test_retrofit.Retrofit.NetWorkHelper;
 import com.example.test_retrofit.group.Activity_findCafe;
 import com.example.test_retrofit.user.PreferenceHelper;
 
@@ -40,7 +38,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 import okhttp3.MediaType;

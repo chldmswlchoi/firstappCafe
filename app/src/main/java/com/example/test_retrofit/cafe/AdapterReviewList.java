@@ -147,10 +147,5 @@ public class AdapterReviewList extends RecyclerView.Adapter<AdapterReviewList.Re
 
 
         }
-
-//        public void addReviewImage(ArrayList<String> image_array) {
-//
-//
-//        }
     }
 }
