@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/select_cafe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+            <ImageView
+                android:background="@color/white"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/chat_image"
+                android:src="@drawable/only_rounded"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="채팅제목"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="17sp"
+                    android:textColor="#110B02"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="15dp"
+                    />
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/last_chat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="마지막 채팅 내용"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="13sp"
+                    android:textColor="#3E2807"
+                    android:layout_marginEnd="15dp"
+                    />
+
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/last_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="날짜"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="10sp"
+                    android:textColor="#3E2807"
+                    android:layout_marginEnd="15dp"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#27FFCD60"
+        />
+
+</LinearLayout>
