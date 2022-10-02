@@ -207,9 +207,7 @@ public class Activity_dessertList extends AppCompatActivity {
                 } else {
                     Log.e(TAG, "실패" + response.body());
                 }
-
             }
-
             @Override
             public void onFailure(Call<DTOCafe> call, Throwable t) {
                 Log.e(TAG, "응답에러 = " + t.getMessage());

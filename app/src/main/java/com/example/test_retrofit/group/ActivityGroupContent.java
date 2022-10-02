@@ -50,7 +50,7 @@ public class ActivityGroupContent extends AppCompatActivity implements OnMapRead
     private Integer id_meeting, mapx, mapy , get_people, get_total_member;
     private String road_address;
     private PreferenceHelper preferenceHelper;
-    private String id;
+    private String id;// 모임 생성자
     private Button button;
     private String select = "";
     private String login_id;
@@ -171,8 +171,8 @@ public class ActivityGroupContent extends AppCompatActivity implements OnMapRead
                         if (!id.equals(login_id)) {
                             USER_SELECT = "join";
 
-                            if(get_total_member>=get_people)
-                            {
+                            if(get_total_member>=get_people || items.get(0).getExit_member() ==1)
+                            { // 모임 참여 인원이 다 찼을 때, 퇴장 당한 멤버일 때 버튼 비활성화
                                 button.setVisibility(View.GONE);
                             }
                             else {
@@ -225,7 +225,7 @@ public class ActivityGroupContent extends AppCompatActivity implements OnMapRead
         date.setText(result.getGdate());
         time.setText(result.getGtime());
         people.setText(String.valueOf(result.getPeople()));
-        id = result.getId();
+        id = result.getId(); // 모임 생성자
         mapx = result.getMapx();
         mapy = result.getMapy();
         total_member.setText(String.valueOf(result.getTotal_member()));
@@ -293,6 +293,7 @@ public class ActivityGroupContent extends AppCompatActivity implements OnMapRead
                 //db에 참가 정보가 저장이 완료가 되면 채팅방 액티비티로 이동
                 Intent intent = new Intent(this, ActivityChatRoom.class);
                 intent.putExtra("id_meeting",id_meeting);
+                intent.putExtra("host",id);
                 startActivity(intent);
                 finish();
 
@@ -356,7 +357,7 @@ public class ActivityGroupContent extends AppCompatActivity implements OnMapRead
     public void cancelGroupJoin(){
 
         Interface_cancelJoinGroup interface_cancelJoinGroup = ApiClient.getApiClient().create(Interface_cancelJoinGroup.class);
-        Call <String> call = interface_cancelJoinGroup.cancelJoinGroup(id_meeting,login_id);
+        Call <String> call = interface_cancelJoinGroup.cancelJoinGroup(id_meeting,login_id,0);
 
         Log.e(TAG, "응답2 =" + id_meeting+login_id);
         call.enqueue(new Callback<String>() {
@@ -371,10 +372,7 @@ public class ActivityGroupContent extends AppCompatActivity implements OnMapRead
                     Log.e ("onSuccess", String.valueOf(response.body()));
                     String jsonResponse = response.body();
                     ISDeleteDB_enterMeeting(jsonResponse);
-
-
                 }
-
             }
 
             @Override

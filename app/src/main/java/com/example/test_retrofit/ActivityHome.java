@@ -22,6 +22,8 @@ import com.example.test_retrofit.group.Fragment_joinGroup;
 import com.example.test_retrofit.like.FragmentLike;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.IOException;
+
 public class ActivityHome extends AppCompatActivity {
 
     private final String TAG = this.getClass().getSimpleName();
@@ -38,12 +40,9 @@ public class ActivityHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         group_select = findViewById(R.id.group_select);
-
         show_group = (TextView) findViewById(R.id.show_group);
-
         my_group = (TextView)findViewById(R.id.my_group);
         join_group = (TextView)findViewById(R.id.join_group);
-
 
         select = getIntent().getStringExtra("my_group");
         Log.e(TAG,"select 값 확인" + select);
@@ -68,13 +67,10 @@ public class ActivityHome extends AppCompatActivity {
 
         }
 
-
         else {
             Log.e(TAG,"select 값 확인2" + select);
             getSupportFragmentManager().beginTransaction().replace(R.id.group_list,fragment_home).commitAllowingStateLoss();
         }
-
-
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -174,8 +170,31 @@ public class ActivityHome extends AppCompatActivity {
 // 이러한 형식의 클릭은 oncreate 밖에서 해줘야 함
 
 
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(TAG, "onRestart");
+    }
 
 
+    protected void onStop() {
+        super.onStop();
+        Log.e(TAG, "onStop");
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(TAG, "onDestroy");
+    }
 
 
+    protected void onPause() {
+        super.onPause();
+        Log.e(TAG, "onPause");
+    }
+
+    protected void onStart() {
+        super.onStart();
+        Log.e(TAG, "onStart");
+
+    }
 }

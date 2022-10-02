@@ -265,6 +265,9 @@ public class Activity_madeGroup extends AppCompatActivity {
                     {
                         Toast.makeText(Activity_madeGroup.this, message,Toast.LENGTH_LONG);
                         Intent intent= new Intent(Activity_madeGroup.this, ActivityChatRoom.class);
+                        intent.putExtra("id_meeting",response.body().getId_meeting());
+                        intent.putExtra("title",response.body().getTitle());
+                        intent.putExtra("host",preferenceHelper.getID()); //모임 생성자
                         startActivity(intent);
                         finish();
                     }
@@ -281,7 +284,6 @@ public class Activity_madeGroup extends AppCompatActivity {
             @Override
             public void onFailure(Call<DTOMessage> call, Throwable t) {
                 Log.e(TAG, "응답에러 = " + t.getMessage());
-
                 CheckDialog("실패");
             }
         });

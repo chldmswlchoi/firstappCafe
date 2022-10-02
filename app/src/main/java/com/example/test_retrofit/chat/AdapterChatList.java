@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.test_retrofit.R;
-import com.example.test_retrofit.cafe.AdapterDessertList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +17,9 @@ import java.util.List;
 public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ChatListViewHolder> {
 
     private final String TAG = this.getClass().getSimpleName();
-    List<DTOChat.ChatData> chatList = new ArrayList<>();
+    List<DTOChatList.ChatData> chatList = new ArrayList<>();
 
-    public  AdapterChatList(List<DTOChat.ChatData> chatList)
+    public  AdapterChatList(List<DTOChatList.ChatData> chatList)
     {
         this.chatList = chatList;
     }

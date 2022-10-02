@@ -3,6 +3,8 @@ package com.example.test_retrofit.chat;
 import android.os.Handler;
 import android.util.Log;
 
+import org.json.JSONObject;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.PrintWriter;
@@ -51,13 +53,19 @@ public class ConnectionThread extends Thread{
                 Log.e(TAG,"sendThread에 닉네임 넘겨주기");
                 now = System.currentTimeMillis();
                 date = new Date(now);
-                Dsdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.KOREA);
-                sdf = new SimpleDateFormat("a H:mm", Locale.KOREA);
+                Dsdf = new SimpleDateFormat("yyyy-MM-dd H:mm:ss", Locale.KOREA);
+                sdf = new SimpleDateFormat("a hh:mm", Locale.KOREA);
                 getDetailTime = Dsdf.format(date);
                 getTime= sdf.format(date);
                 PrintWriter writer = new PrintWriter(socket.getOutputStream(),true);
-                writer.println(nickname+"#"+id_meeting+"#"+isMember+"#"+id
-                        +"#"+getTime+"#"+getDetailTime);
+                JSONObject sending = new JSONObject();
+                sending.put("nickname",nickname);
+                sending.put("date",getTime);
+                sending.put("detail_date",getDetailTime);
+                sending.put("id_meeting",id_meeting);
+                sending.put("isMember",isMember);
+                sending.put("sender",id);
+                writer.println(sending);
                 writer.flush();
                 //메시지를 받는 스레드 생성 및 시작
                 receiverThread = new ThreadReceiver(socket,chatHandler);

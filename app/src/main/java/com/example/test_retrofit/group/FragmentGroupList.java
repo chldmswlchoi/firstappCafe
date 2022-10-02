@@ -73,7 +73,7 @@ public class FragmentGroupList extends Fragment {
 
         Log.e(TAG, "그룹 리스트 프레그먼트 ONCREATEVIEW");
 
-        getGroupData();
+//        getGroupData();
         //레트로핏 통신 서버에서 데이터 가져옴
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -140,6 +140,11 @@ public class FragmentGroupList extends Fragment {
         return view;
     }
 
+    public void onResume(){
+        Log.e(TAG, "onResume");
+        super.onResume();
+        getGroupData();
+    }
     //레트로핏 통해 모임 게시글 삭제 하는 함수
 
     void deleteGroupData(int position) {
@@ -243,4 +248,8 @@ public class FragmentGroupList extends Fragment {
 
         builder.show();
     }
+
+
+
 }
+

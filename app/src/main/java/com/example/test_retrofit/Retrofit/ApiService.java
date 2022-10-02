@@ -2,11 +2,13 @@ package com.example.test_retrofit.Retrofit;
 
 import com.example.test_retrofit.cafe.DTOCafe;
 import com.example.test_retrofit.cafe.DTOReview;
+import com.example.test_retrofit.chat.DTOChatList;
 import com.example.test_retrofit.chat.DTOChat;
 import com.example.test_retrofit.group.DTO.DTOMessage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -25,9 +27,16 @@ public interface ApiService {
 
 
     @Headers("Accept: application/json")
+    @GET("test/chat/read_user_list.php")
+//    () 안에 디테일한 url 주소 설정
+    Call<List<DTOChat>> getUserList(
+            @Query("id_meeting") int id_meeting
+    );
+
+    @Headers("Accept: application/json")
     @GET("test/chat/read_chat_message.php")
 //    () 안에 디테일한 url 주소 설정
-    Call<DTOChat> getChatMessage(
+    Call<List<DTOChat>> getChatMessages(
             //페이징 하기 위해서 필요한 page,limit
 //            @Query("page") Integer page,
 //            @Query("limit") Integer limit,
@@ -40,7 +49,7 @@ public interface ApiService {
     @Headers("Accept: application/json")
     @GET("test/chat/read_chatList.php")
 //    () 안에 디테일한 url 주소 설정
-    Call<DTOChat> getChatList(
+    Call<DTOChatList> getChatList(
             //페이징 하기 위해서 필요한 page,limit
 //            @Query("page") Integer page,
 //            @Query("limit") Integer limit,

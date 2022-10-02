@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
                 //객체 생성해 초기 설정하는 과정
                 .baseUrl(RegisterInterface.REGIST_URL)
                 // 서버 연동을 위한 baseurl  설정, 호출하는 주소를 고정 값으로 세팅하면 url 호출 시 반복 줄여줌
-
                 .addConverterFactory(ScalarsConverterFactory.create())
                 //json 은 자바에서 바로 사용할 수 있는 데이터 형식이 아니기 때문에 이를 변환해주기 위해
                 // 데이터를 변환해줄 컨버터를 사용해야 한다.

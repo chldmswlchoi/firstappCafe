@@ -1,7 +1,5 @@
 package com.example.test_retrofit.chat;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.util.Log;
 
 import org.json.JSONObject;
@@ -13,34 +11,31 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class ThreadSender extends Thread {
+public class ThreadSenderExit extends Thread {
     private final String TAG = this.getClass().getSimpleName();
     private Socket socket;
-    private String message;
-    private String profile_name,getTime,getDetailTime;
+    private String message,exit_id;
     private PrintWriter writer;
     private long now;
     private Date date;
     private SimpleDateFormat Dsdf, sdf;
+    private String getTime,getDetailTime;
 
-
-    ThreadSender(Socket socket, String message, String profile_name) {
+    ThreadSenderExit(Socket socket, String message,String exit_id){
         this.socket = socket;
         this.message = message;
-        this.profile_name = profile_name;
+        this.exit_id =exit_id;
+
         try {
             writer = new PrintWriter(socket.getOutputStream(), true);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // printWriter 에 OutputStream 을 래핑하여 다음과 같이 데이터를 텍스트 형식으로 보낼 수 있다.
-        //다양한 출력형식을 제공하는 메소드를 제공한다.,
-        // 인수 1: outputStrem 객체, 2: autoFlush 를 t로 하면 버퍼가 차거나 필요한 경우 비운다.
-
     }
 
-    @SuppressLint("SimpleDateFormat")
-    public void run() {
+    public void run(){
+        Log.e(TAG, "ThreadSenderExit");
+
         try {
             Log.e(TAG, "ThreadSender");
             if (writer != null) {
@@ -53,17 +48,14 @@ public class ThreadSender extends Thread {
                     getTime= sdf.format(date);
                     JSONObject sending = new JSONObject();
                     sending.put("message",message);
-                    sending.put("profile",profile_name);
                     sending.put("date",getTime);
                     sending.put("detail_date",getDetailTime);
+                    sending.put("view_type",300);
+                    sending.put("exit_id",exit_id);
                     writer.println(sending);
                     Log.e(TAG, "서버에게 메시지 보냄");
                     writer.flush();}
 
-                if("bye".equals(message)){
-                    socket.close();
-                    Log.e(TAG, "소켓 닫음");
-                }
             }
 
         } catch (Exception e) {
@@ -72,4 +64,3 @@ public class ThreadSender extends Thread {
         }
     }
 }
-

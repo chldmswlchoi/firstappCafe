@@ -21,10 +21,10 @@ import java.util.ArrayList;
 public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final String TAG = this.getClass().getSimpleName();
-    private ArrayList<ItemChat> chatList = null;
+    private ArrayList<DTOChat> chatList = null;
 
 
-    AdapterChat(ArrayList<ItemChat> chatList)
+    AdapterChat(ArrayList<DTOChat> chatList)
     {
         this.chatList = chatList;
     }
@@ -45,10 +45,15 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             view = inflater.inflate(R.layout.item_left_chat, parent, false);
             return new LeftViewHolder(view);
         }
-        else
+        else if(viewType == ViewType.RIGHT_CHAT)
         {
             view = inflater.inflate(R.layout.item_right_chat, parent, false);
             return new RightViewHolder(view);
+        }
+
+        else {
+            view = inflater.inflate(R.layout.item_center_time, parent, false);
+            return new CenterTimeHolder(view);
         }
     }
 
@@ -58,7 +63,7 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if(holder.getItemViewType() == ViewType.CENTER_JOIN)
         {
             Log.e(TAG,"ViewType Center");
-            ((CenterViewHolder) holder).content.setText(chatList.get(position).getContent());
+            ((CenterViewHolder) holder).content.setText(chatList.get(position).getMessage());
         }
         else if(holder.getItemViewType() == ViewType.LEFT_CHAT)
         {
@@ -68,14 +73,19 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     transform(new CenterCrop(), new RoundedCorners(70)).
                     into(((LeftViewHolder) holder).profile);
             ((LeftViewHolder) holder).name.setText(chatList.get(position).getNickname());
-            ((LeftViewHolder) holder).content.setText(chatList.get(position).getContent());
-            ((LeftViewHolder) holder).time.setText(chatList.get(position).getTime());
+            ((LeftViewHolder) holder).content.setText(chatList.get(position).getMessage());
+            ((LeftViewHolder) holder).time.setText(chatList.get(position).getDate());
         }
-        else
+        else if (holder.getItemViewType() == ViewType.RIGHT_CHAT)
         {
             Log.e(TAG,"ViewType Right");
-            ((RightViewHolder) holder).content.setText(chatList.get(position).getContent());
-            ((RightViewHolder) holder).time.setText(chatList.get(position).getTime());
+            ((RightViewHolder) holder).content.setText(chatList.get(position).getMessage());
+            ((RightViewHolder) holder).time.setText(chatList.get(position).getDate());
+        }
+
+        else{
+            Log.e(TAG,"ViewType Center_Time");
+            ((CenterTimeHolder) holder).content.setText(chatList.get(position).getMessage());
         }
     }
 
@@ -86,8 +96,9 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemViewType(int position) {
-        return chatList.get(position).getViewType();
+        return chatList.get(position).getView_type();
     }
+    //여기서 뷰타입 지정해준다!
 
     public class CenterViewHolder extends RecyclerView.ViewHolder{
         TextView content;
@@ -108,7 +119,6 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         LeftViewHolder(View itemView)
         {
             super(itemView);
-
             content = itemView.findViewById(R.id.content);
             name = itemView.findViewById(R.id.name);
             time = itemView.findViewById(R.id.time);
@@ -126,6 +136,16 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             content = itemView.findViewById(R.id.content);
             time = itemView.findViewById(R.id.time);
+        }
+    }
+
+    public class CenterTimeHolder extends RecyclerView.ViewHolder{
+        TextView content;
+
+        CenterTimeHolder(View itemView)
+        {
+            super(itemView);
+            content = itemView.findViewById(R.id.content);
         }
     }
 }

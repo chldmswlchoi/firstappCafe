@@ -39,7 +39,6 @@ public class AdapterDessertList extends RecyclerView.Adapter<AdapterDessertList.
     @NonNull
     @Override
     public DessertViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View cafe_item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cafe, parent, false);
         DessertViewHolder holder = new DessertViewHolder(cafe_item);
         return holder;

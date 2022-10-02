@@ -22,9 +22,6 @@ public class AdapterjoinGroup extends RecyclerView.Adapter<AdapterjoinGroup.join
     private Context context;
     private final String TAG = this.getClass().getSimpleName();
 
-
-
-
     public AdapterjoinGroup(List<DTOGroupResponse.GroupDTO>joinGroupItemList, Context context)
     {
         this.joinGroupItemList = joinGroupItemList;
@@ -52,17 +49,13 @@ public class AdapterjoinGroup extends RecyclerView.Adapter<AdapterjoinGroup.join
         holder.location.setText(specificItems.getRoad_address());
         holder.total_member.setText( String.valueOf(specificItems.getTotal_member()));
         holder.people.setText( String.valueOf(specificItems.getPeople()));
-
-
     }
-
 
     @Override
     public int getItemCount() {
         return joinGroupItemList.size();
 
     }
-
 
     interface OnItemClickListener {
         void onItemClick(View v, int position);

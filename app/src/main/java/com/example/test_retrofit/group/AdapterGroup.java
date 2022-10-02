@@ -65,7 +65,6 @@ public class AdapterGroup extends RecyclerView.Adapter <AdapterGroup.GroupViewHo
 
     private AdapterGroup.OnItemClickListener mListener = null;
 
-
     public void setOnItemClickListener(AdapterGroup.OnItemClickListener listener) {
         this.mListener = listener;
     }

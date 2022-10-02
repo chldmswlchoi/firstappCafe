@@ -14,7 +14,9 @@ public interface Interface_cancelJoinGroup {
     Call<String> cancelJoinGroup(
 
             @Query("id_meeting") Integer id_meeting,
-            @Query("login_id") String login_id
+            @Query("exit_id") String exit_id,
+            @Query("exit") int exit // 서버에서
+
 //            몇번째 게시글을 삭제할건지 지정하기 위해서 쿼리를 통해 url에 포함해서 날려줌
 //            get 방식에서만 사용 가능 url 뒤에 붙는다.
 //            query?= query 이러한 형식으로
