@@ -40,7 +40,7 @@ public class FragmentCafeHome extends Fragment {
         made_cafe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (getActivity(),Activity_madeCafe1.class);
+                Intent intent = new Intent (getActivity(), Activity_madeCafe.class);
                 startActivity(intent);
             }
         });

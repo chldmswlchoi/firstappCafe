@@ -27,6 +27,13 @@ public interface ApiService {
 
 
     @Headers("Accept: application/json")
+    @Multipart
+    @POST("test/chat/save_chat_image.php")
+    Call<String> postChatImage(@Part ArrayList<MultipartBody.Part> images,
+                               @PartMap HashMap<String, RequestBody> data);
+
+
+    @Headers("Accept: application/json")
     @GET("test/chat/read_user_list.php")
 //    () 안에 디테일한 url 주소 설정
     Call<List<DTOChat>> getUserList(

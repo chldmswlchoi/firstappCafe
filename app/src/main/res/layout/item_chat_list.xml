@@ -25,7 +25,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:id="@+id/chat_image"
-                android:src="@drawable/only_rounded"
+                android:src="@drawable/oven"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="10dp"

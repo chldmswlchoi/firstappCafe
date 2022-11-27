@@ -10,7 +10,6 @@
         tools:ignore="ScopedStorage" />
 
     <application
-
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,10 +22,15 @@
         android:theme="@style/Theme.Test_retrofit"
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="adjustResize">
+        <service
+            android:name=".chat.MyService"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity
             android:name=".chat.ActivityChatRoom"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".cafe.ActivityCafeContent"
             android:exported="false" />
@@ -37,7 +41,7 @@
             android:name=".cafe.Activity_dessertList"
             android:exported="false" />
         <activity
-            android:name=".cafe.Activity_madeCafe1"
+            android:name=".cafe.Activity_madeCafe"
             android:exported="false" />
         <activity
             android:name=".group.Activity_findCafe"
@@ -83,7 +87,6 @@
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="1z46sbq8ob" />
-    </application
-        >
+    </application>
 
 </manifest>

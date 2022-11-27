@@ -59,7 +59,6 @@ public class FragmentChatList extends Fragment {
         adapterChatList = new AdapterChatList(chatDataList);
         recyclerView.setAdapter(adapterChatList);
 
-//        getChatList();
 
         adapterChatList.setOnItemClickListener(new AdapterChatList.OnItemClickListener() {
             @Override

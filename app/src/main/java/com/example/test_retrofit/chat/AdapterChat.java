@@ -16,6 +16,8 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.test_retrofit.R;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -51,9 +53,18 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             return new RightViewHolder(view);
         }
 
-        else {
+        else if (viewType == ViewType.CENTER_TIME) {
             view = inflater.inflate(R.layout.item_center_time, parent, false);
             return new CenterTimeHolder(view);
+        }
+        else if (viewType == ViewType.LEFT_IMAGE){
+            view = inflater.inflate(R.layout.item_left_image, parent, false);
+            return new LeftImageHolder(view);
+        }
+
+        else {
+            view = inflater.inflate(R.layout.item_right_image, parent, false);
+            return new RightImageHolder(view);
         }
     }
 
@@ -83,9 +94,37 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             ((RightViewHolder) holder).time.setText(chatList.get(position).getDate());
         }
 
-        else{
+        else if (holder.getItemViewType() == ViewType.CENTER_TIME){
             Log.e(TAG,"ViewType Center_Time");
             ((CenterTimeHolder) holder).content.setText(chatList.get(position).getMessage());
+        }
+
+        else if (holder.getItemViewType() == ViewType.LEFT_IMAGE)
+        {
+            Log.e(TAG,"ViewType LEFT_IMAGE");
+            Glide.with(((LeftImageHolder) holder).profile.getContext()).
+                    load("http://3.39.153.170/test/upload/profile/"+chatList.get(position).getProfile_name()).
+                    transform(new CenterCrop(), new RoundedCorners(70)).
+                    into(((LeftImageHolder) holder).profile);
+
+            Glide.with(((LeftImageHolder) holder).image.getContext())
+                    .load("http://3.39.153.170/test/upload/chat/"+chatList.get(position).getMessage())
+                    .error(R.drawable.image)
+                    .into((((LeftImageHolder) holder).image));
+
+            ((LeftImageHolder) holder).name.setText(chatList.get(position).getNickname());
+            ((LeftImageHolder) holder).time.setText(chatList.get(position).getDate());
+        }
+
+        else{
+            Log.e(TAG,"ViewType Right_Image");
+
+            Glide.with(((RightImageHolder) holder).image.getContext())
+                    .load("http://3.39.153.170/test/upload/chat/"+chatList.get(position).getMessage())
+                    .error(R.drawable.image)
+                    .into((((RightImageHolder) holder).image));
+
+            ((RightImageHolder) holder).time.setText(chatList.get(position).getDate());
         }
     }
 
@@ -111,9 +150,7 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     public class LeftViewHolder extends RecyclerView.ViewHolder{
-        TextView content;
-        TextView name;
-        TextView time;
+        TextView content,name,time;
         ImageView profile;
 
         LeftViewHolder(View itemView)
@@ -146,6 +183,32 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         {
             super(itemView);
             content = itemView.findViewById(R.id.content);
+        }
+    }
+
+    public class LeftImageHolder extends RecyclerView.ViewHolder{
+        TextView name,time;
+        ImageView profile,image;
+
+        LeftImageHolder(View itemView)
+        {
+            super(itemView);
+            name = itemView.findViewById(R.id.name);
+            time = itemView.findViewById(R.id.time);
+            profile = itemView.findViewById(R.id.profile);
+            image = itemView.findViewById(R.id.image);
+        }
+    }
+
+    public class RightImageHolder extends RecyclerView.ViewHolder{
+        TextView time;
+        ImageView image;
+
+        RightImageHolder(View itemView)
+        {
+            super(itemView);
+            time = itemView.findViewById(R.id.time);
+            image = itemView.findViewById(R.id.image);
         }
     }
 }

@@ -45,6 +45,11 @@ public class AdapterUserList extends RecyclerView.Adapter<AdapterUserList.UserLi
 
         holder.nickname.setText(userItemList.get(position).getNickname());
 
+        if(ActivityChatRoom.host.equals(userItemList.get(position).getId())) {
+            holder.host.setVisibility(View.VISIBLE);
+        }
+
+
     }
 
     @Override
@@ -70,12 +75,13 @@ public class AdapterUserList extends RecyclerView.Adapter<AdapterUserList.UserLi
     }
 
     public class UserListViewHolder extends RecyclerView.ViewHolder {
-        protected ImageView profile;
+        protected ImageView profile,host;
         protected TextView nickname;
         public UserListViewHolder(@NonNull View itemView) {
             super(itemView);
 
             profile = itemView.findViewById(R.id.profile);
+            host = itemView.findViewById(R.id.host);
             nickname = itemView.findViewById(R.id.nickname);
 
             itemView.setOnClickListener(new View.OnClickListener() {

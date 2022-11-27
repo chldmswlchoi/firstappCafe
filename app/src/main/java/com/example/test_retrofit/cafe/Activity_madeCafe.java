@@ -47,7 +47,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Activity_madeCafe1 extends AppCompatActivity {
+public class Activity_madeCafe extends AppCompatActivity {
 
     private final String TAG = this.getClass().getSimpleName();
     private EditText review, title, cafe, road_address, number, sns_url;
@@ -64,9 +64,9 @@ public class Activity_madeCafe1 extends AppCompatActivity {
     //    스피너에서 가져온 값
     private String gnumber, glast_order, gfood, gdessert, gtema;
 
-//    카페 검색 결과 선택 후 결과 구분 숫자
+    //    카페 검색 결과 선택 후 결과 구분 숫자
     private Integer CAFERESULT = 0;
-//    사진 선택 후 결과 구분 숫자
+    //    사진 선택 후 결과 구분 숫자
     private Integer IMAGERESULT = 1;
 
     private PreferenceHelper preferenceHelper;
@@ -75,7 +75,7 @@ public class Activity_madeCafe1 extends AppCompatActivity {
 
     private ArrayList<String> imagePath = new ArrayList<>();
     private String ereview, etitle, ecafe, eroad_address, enumber, esns_url, final_number;
-//    주소에서 분리한 지역 저장
+    //    주소에서 분리한 지역 저장
     private String area;
 
     ArrayList<Uri> uriList = new ArrayList<>();
@@ -110,7 +110,7 @@ public class Activity_madeCafe1 extends AppCompatActivity {
         register = findViewById(R.id.register);
         location = findViewById(R.id.location);
 
-        preferenceHelper =new PreferenceHelper(this);
+        preferenceHelper = new PreferenceHelper(this);
         myDialog = new MyDialog(this);
 
         String[] first_number = {"02", "031", "032", "033", "041", "042", "043", "044", "050", "051", "052", "053", "054", "055", "061", "062", "063", "064", "010", "011", "016", "017",
@@ -136,7 +136,6 @@ public class Activity_madeCafe1 extends AppCompatActivity {
 //        리스트에 나타낼 배열56
 
 
-
         ArrayAdapter<String> tadapter = new ArrayAdapter<String>
                 (this, android.R.layout.simple_spinner_item, tema);
 //        위 배열 값을 String으로 선언했기 때문에 <String>이라고 선언한다.
@@ -150,7 +149,6 @@ public class Activity_madeCafe1 extends AppCompatActivity {
 
         ArrayAdapter<String> nadapter = new ArrayAdapter<String>
                 (this, android.R.layout.simple_spinner_item, first_number);
-
 
 
         dessert_spinner.setAdapter(fadapter);
@@ -167,7 +165,7 @@ public class Activity_madeCafe1 extends AppCompatActivity {
 //                setType은 데이터가 아닌 특정한 유형인 인텐트를 생성하기 위해 사용된다.
 //                예를 들어 반환할 데이터 유형을 표시하기 위해,
 //                또한 이 메서드는 이전에 설정된 모든 데이터를 자동으로 지운다.
-                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
+                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
 //                EXTRA_ALLOW_MULTIPLE 은 사용자가 여러 항목을 선택하고 반환하도록 허용한다.
 //                getClipData() 부분으로 반환된다.
                 intent.setAction(Intent.ACTION_PICK);
@@ -302,7 +300,7 @@ public class Activity_madeCafe1 extends AppCompatActivity {
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Activity_madeCafe1.this, Activity_findCafe.class);
+                Intent intent = new Intent(Activity_madeCafe.this, Activity_findCafe.class);
                 startActivityForResult(intent, CAFERESULT);
                 // FindCafeActivity에서 값을 받아 온다.
                 //두번째 인자 값은 여러 여러 액티비티들이 있을 경우 어떤 액티비티인지 식별하는 값이다.
@@ -334,13 +332,12 @@ public class Activity_madeCafe1 extends AppCompatActivity {
         });
     }
 
-    private  void postCafe (){
+    private void postCafe() {
 
- //        filepath는 String 변수로 갤러리에서 이미지를 가져올 때 photoUri.getPath()를 통해 받아온다
+        //filepath는 String 변수로 갤러리에서 이미지를 가져올 때 photoUri.getPath()를 통해 받아온다
         getRealPathFromURL(uriList);
-
         ArrayList<MultipartBody.Part> images = new ArrayList<>();
-        for(Integer i =0 ; i<imagePath.size(); i++) {
+        for (Integer i = 0; i < imagePath.size(); i++) {
             File file = new File(imagePath.get(i));
 
             // -------------> 이미지 압축 과정 시작
@@ -371,8 +368,8 @@ public class Activity_madeCafe1 extends AppCompatActivity {
             RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), byteArrayOutputStream.toByteArray());
 
 //        http 요청 또는 응답 본문의 콘텐츠 유형을 설명한다.
-            images.add( MultipartBody.Part.createFormData("uploaded_file[]", file.getName(), requestFile));
-            Log.e(TAG,"uploaded_file"+images.get(i));
+            images.add(MultipartBody.Part.createFormData("uploaded_file[]", file.getName(), requestFile));
+            Log.e(TAG, "uploaded_file" + images.get(i));
 //        인터페이스에서 파일을 보내기 위해 컨탠트 파입을 multipart 로 명시해주었기 때문에 requestbody를  multipart로 변경한다.
 //        그리고 images라는 배열에 넣어준다.
         }
@@ -382,52 +379,51 @@ public class Activity_madeCafe1 extends AppCompatActivity {
 
         map = new HashMap<>();
         s_id = preferenceHelper.getID();
-        RequestBody sreview = RequestBody.create(MediaType.parse("text/plain"),ereview);
-        RequestBody stitle = RequestBody.create(MediaType.parse("text/plain"),etitle);
-        RequestBody scafe = RequestBody.create(MediaType.parse("text/plain"),ecafe);
-        RequestBody sroad_address = RequestBody.create(MediaType.parse("text/plain"),eroad_address);
-        RequestBody ssns_url = RequestBody.create(MediaType.parse("text/plain"),esns_url);
-        RequestBody sfinal_number = RequestBody.create(MediaType.parse("text/plain"),final_number);
+        RequestBody sreview = RequestBody.create(MediaType.parse("text/plain"), ereview);
+        RequestBody stitle = RequestBody.create(MediaType.parse("text/plain"), etitle);
+        RequestBody scafe = RequestBody.create(MediaType.parse("text/plain"), ecafe);
+        RequestBody sroad_address = RequestBody.create(MediaType.parse("text/plain"), eroad_address);
+        RequestBody ssns_url = RequestBody.create(MediaType.parse("text/plain"), esns_url);
+        RequestBody sfinal_number = RequestBody.create(MediaType.parse("text/plain"), final_number);
 
 
-        RequestBody slast_order = RequestBody.create(MediaType.parse("text/plain"),glast_order);
-        RequestBody sfood = RequestBody.create(MediaType.parse("text/plain"),gfood);
-        RequestBody sdessert = RequestBody.create(MediaType.parse("text/plain"),gdessert);
-        RequestBody stema = RequestBody.create(MediaType.parse("text/plain"),gtema);
+        RequestBody slast_order = RequestBody.create(MediaType.parse("text/plain"), glast_order);
+        RequestBody sfood = RequestBody.create(MediaType.parse("text/plain"), gfood);
+        RequestBody sdessert = RequestBody.create(MediaType.parse("text/plain"), gdessert);
+        RequestBody stema = RequestBody.create(MediaType.parse("text/plain"), gtema);
 
 
         RequestBody sarea = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(area));
         RequestBody smapx = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(mapx));
         RequestBody smapy = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(mapy));
-        RequestBody id = RequestBody.create(MediaType.parse("text/plain"),s_id);
+        RequestBody id = RequestBody.create(MediaType.parse("text/plain"), s_id);
 
 
-        RequestBody image_count = RequestBody.create(MediaType.parse("text/plain"),String.valueOf(images.size()));
+        RequestBody image_count = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(images.size()));
 //        이미지 개수
 
-        map.put("id",id);
-        map.put("cafe",scafe);
-        map.put("road_address",sroad_address);
-        map.put("a_id",sarea);
-        map.put("mapx",smapx);
-        map.put("mapy",smapy);
-        map.put("title",stitle);
-        map.put("phone_number",sfinal_number);
-        map.put("last_order",slast_order);
-        map.put("sns_url",ssns_url);
-        map.put("d_id",sdessert);
-        map.put("t_id",stema);
+        map.put("id", id);
+        map.put("cafe", scafe);
+        map.put("road_address", sroad_address);
+        map.put("a_id", sarea);
+        map.put("mapx", smapx);
+        map.put("mapy", smapy);
+        map.put("title", stitle);
+        map.put("phone_number", sfinal_number);
+        map.put("last_order", slast_order);
+        map.put("sns_url", ssns_url);
+        map.put("d_id", sdessert);
+        map.put("t_id", stema);
 //        cafe db 에 저장할 것
 
-        map.put("review",sreview);
-        map.put("f_id",sfood);
+        map.put("review", sreview);
+        map.put("f_id", sfood);
 //        리뷰 db 에 저장할 것
 
         map.put("image_count", image_count);
 
 
-
-        Call<String> call = NetWorkHelper.getInstance().getApiService().postCafe(images,map);
+        Call<String> call = NetWorkHelper.getInstance().getApiService().postCafe(images, map);
         call.enqueue(new Callback<String>() {
 
             @Override
@@ -444,9 +440,8 @@ public class Activity_madeCafe1 extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                if((jsonObject.optString("result").equals("success")))
-                {
-                    Toast.makeText(Activity_madeCafe1.this, "등록 완료 되었습니다", Toast.LENGTH_SHORT).show();
+                if ((jsonObject.optString("result").equals("success"))) {
+                    Toast.makeText(Activity_madeCafe.this, "등록 완료 되었습니다", Toast.LENGTH_SHORT).show();
                     finish();
                 }
 
@@ -495,14 +490,14 @@ public class Activity_madeCafe1 extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
 
 //                이미지를 하나라도 선택한 경우
-                if(data.getClipData() == null){
+                if (data.getClipData() == null) {
                     Log.e("single choice: ", String.valueOf(data.getData()));
                     Uri imageUri = data.getData();
                     uriList.add(imageUri);
 
                     adapterMultiImage = new AdapterMultiImage(uriList);
                     recyclerView.setAdapter(adapterMultiImage);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,true));
+                    recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
 
 
                 }
@@ -511,16 +506,15 @@ public class Activity_madeCafe1 extends AppCompatActivity {
                     ClipData clipData = data.getClipData();
                     Log.e("clipData: 사진이 몇개 반환되었는지", String.valueOf(clipData.getItemCount()));
 
-                    if(clipData.getItemCount()>3){  //선택한 이미지가 4장 이상인 경우
-                        Toast.makeText(getApplicationContext(), "사진은 3장까지만 선택 가능합니다.",Toast.LENGTH_LONG).show();
-                    }
-                    else{  //선택한 이미지가 1장 이상 4장 이하인 경우
-                        Log.e(TAG,"multiple choice");
+                    if (clipData.getItemCount() > 3) {  //선택한 이미지가 4장 이상인 경우
+                        Toast.makeText(getApplicationContext(), "사진은 3장까지만 선택 가능합니다.", Toast.LENGTH_LONG).show();
+                    } else {  //선택한 이미지가 1장 이상 4장 이하인 경우
+                        Log.e(TAG, "multiple choice");
 
-                        for(int i =0 ; i<clipData.getItemCount();i++){
+                        for (int i = 0; i < clipData.getItemCount(); i++) {
                             Uri imageUri = clipData.getItemAt(i).getUri();
 //                            선택한 이미지의 uri 를 가져온다.
-                            try{
+                            try {
                                 uriList.add(imageUri); // uri를 list에 담는다
                             } catch (Exception e) {
                                 Log.e(TAG, "File select error", e);
@@ -529,7 +523,7 @@ public class Activity_madeCafe1 extends AppCompatActivity {
                     }
                     adapterMultiImage = new AdapterMultiImage(uriList);
                     recyclerView.setAdapter(adapterMultiImage);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
+                    recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 //                    리사이클러뷰 수평 스크롤 적용
 
                 }
@@ -543,14 +537,14 @@ public class Activity_madeCafe1 extends AppCompatActivity {
 
     }
 
-//        image 의 절대경로를 가져오는 메소드 실제 sd카드의 경로를 리턴해주는 함수이다.
+    //        image 의 절대경로를 가져오는 메소드 실제 sd카드의 경로를 리턴해주는 함수이다.
     private ArrayList<String> getRealPathFromURL(ArrayList<Uri> uri) {
         Log.e(TAG, "getRealPathFromURL : " + uri.size());
         Cursor cursor = null;
 //        쿼리한 데이터를 순회회하는 역할을 cursor가 한다.
 //        cursor에는 쿼리할때 projection으로 요청한 컬럼들이 포함되어 있다. 즉 db의 칼럼들이 저장되어 있다.
         try {
-            for (Integer i=0; i< uri.size(); i++) {
+            for (Integer i = 0; i < uri.size(); i++) {
                 String[] proj = {MediaStore.Images.Media.DATA};
 //            MediaStore.Images는 타입이 image인 미디어의 모음집이다.
 //            MediaStore.Images.Media.DATA 는 캐시된 열의 인덱스인듯
@@ -569,7 +563,7 @@ public class Activity_madeCafe1 extends AppCompatActivity {
                 cursor.moveToFirst();
                 Log.e(TAG, "절대 경로5/" + cursor.getString(column_index));
                 imagePath.add(cursor.getString(column_index));
-                Log.e(TAG, i+"번째 imagePath 값 : " + imagePath.get(i));
+                Log.e(TAG, i + "번째 imagePath 값 : " + imagePath.get(i));
 
 //                getString 은 욫청된 열의 값을 문자열로 반환
             }
@@ -578,8 +572,6 @@ public class Activity_madeCafe1 extends AppCompatActivity {
             if (cursor != null) {
                 cursor.close();
             }
-
-
 
         }
     }

@@ -5,16 +5,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
+import com.example.test_retrofit.Retrofit.NetWorkHelper;
+import com.example.test_retrofit.chat.DTOChatList;
+import com.example.test_retrofit.chat.MyService;
 import com.example.test_retrofit.user.ActivityLogin;
 import com.example.test_retrofit.user.PreferenceHelper;
 
-public class ActivityFirstLoading extends AppCompatActivity {
+import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class ActivityFirstLoading extends AppCompatActivity {
+    private final String TAG = this.getClass().getSimpleName();
     PreferenceHelper preferenceHelper;
     String id;
     private Intent intent;
-
+    private List<DTOChatList.ChatData> chatDataList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +51,10 @@ public class ActivityFirstLoading extends AppCompatActivity {
                 }
 
                 else {
+                    startService(new Intent(ActivityFirstLoading.this, MyService.class));
                     intent = new Intent(ActivityFirstLoading.this, ActivityHome.class);
                     startActivity(intent);
+
 
                 }
                 finish();
@@ -50,4 +62,6 @@ public class ActivityFirstLoading extends AppCompatActivity {
         },2000);
 
     }
+
+
 }

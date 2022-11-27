@@ -3,6 +3,8 @@ package com.example.test_retrofit.chat;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class DTOChat {
 
     public DTOChat(String message, String nickname , String date, int view_type,
@@ -29,14 +31,15 @@ public class DTOChat {
                 ", id='" + id + '\'' +
                 ", removeUserList=" + removeUserList +
                 ", exit_id='" + exit_id + '\'' +
+                ", image_array=" + image_array +
                 '}';
     }
 
-    public int getId_meeting() {
+    public Integer getId_meeting() {
         return id_meeting;
     }
 
-    public void setId_meeting(int id_meeting) {
+    public void setId_meeting(Integer id_meeting) {
         this.id_meeting = id_meeting;
     }
 
@@ -128,9 +131,17 @@ public class DTOChat {
         this.exit_id = exit_id;
     }
 
+    public ArrayList<String> getImage_array() {
+        return image_array;
+    }
+
+    public void setImage_array(ArrayList<String> image_array) {
+        this.image_array = image_array;
+    }
+
     @SerializedName("id_meeting")
     @Expose
-    private int id_meeting;
+    private Integer id_meeting;
 
     @SerializedName("sender")
     @Expose
@@ -176,4 +187,7 @@ public class DTOChat {
     @Expose
     private String exit_id;
 
+    @Expose
+    @SerializedName("image_array")
+    private ArrayList<String> image_array;
 }
