@@ -31,7 +31,7 @@
                 <ImageView
                     android:id="@+id/cafe_image"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="300dp"
                     android:layout_marginEnd="15dp"
                     android:layout_marginBottom="10dp" />
 
@@ -63,8 +63,8 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginStart="10dp"
                 android:text="모임제목"
-                android:textColor="#3E2807"
-                android:textSize="20sp"
+                android:textColor="#000000"
+                android:textSize="30sp"
                 android:layout_marginBottom="5dp"
                 android:textStyle="bold"
                 />
@@ -78,7 +78,7 @@
                 android:layout_marginStart="10dp"
                 android:text="에그타르트가 맛있는 곳"
                 android:textColor="#3E2807"
-                android:textSize="17sp"
+                android:textSize="25sp"
                 android:layout_marginBottom="10dp"/>
 
             <LinearLayout
@@ -90,9 +90,9 @@
                 >
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity=""
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="5dp"
                     android:src="@drawable/location"
                     android:layout_marginStart="10dp"/>
 
@@ -104,7 +104,7 @@
                     android:layout_marginEnd="1dp"
                     android:text="공릉동"
                     android:textColor="#3E2807"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
 
                     />
 

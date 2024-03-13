@@ -24,7 +24,7 @@
                 android:gravity="center"
                 android:text="모임보기 "
                 android:textColor="#000000"
-                android:textSize="25sp"
+                android:textSize="30sp"
                 />
 
             <TextView
@@ -35,7 +35,7 @@
                 android:layout_marginBottom="15dp"
                 android:text="l"
                 android:textColor="#000000"
-                android:textSize="25sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/my_group"
@@ -47,7 +47,7 @@
                 android:gravity="center"
                 android:text="내 모임 "
                 android:textColor="#000000"
-                android:textSize="25sp" />
+                android:textSize="30sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -55,7 +55,7 @@
                 android:layout_marginBottom="15dp"
                 android:text="l"
                 android:textColor="#000000"
-                android:textSize="25sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/join_group"
@@ -67,7 +67,7 @@
                 android:gravity="center"
                 android:text="참여모임"
                 android:textColor="#000000"
-                android:textSize="25sp" />
+                android:textSize="30sp" />
 
 
 

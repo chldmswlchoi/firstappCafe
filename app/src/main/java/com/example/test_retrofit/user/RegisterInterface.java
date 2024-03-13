@@ -9,7 +9,7 @@ import retrofit2.http.POST;
 public interface RegisterInterface {
 
 
-    String REGIST_URL = "http://3.39.153.170/";
+    String REGIST_URL = "http://43.200.106.233/";
 
     //요청할 서버의 URL
     //변수 혹은 상수로 할당할 때 http://가 들어가야 하며, 주소 끝에 /를 붙여줘야 한다.

@@ -9,6 +9,7 @@
 
 
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -56,8 +57,8 @@
                 android:orientation="horizontal">
 
                 <View
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginEnd="5dp"
                     android:background="@drawable/icon1" />
 
@@ -69,7 +70,7 @@
                     android:layout_marginEnd="30dp"
                     android:text="카페명"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <View
@@ -118,15 +119,17 @@
                 android:layout_gravity="center_vertical"
                 android:text="#태그  #태그"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:background="#27FFCD60" />
+            android:layout_height="1dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:background="#FFC107" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,7 +148,7 @@
                 android:textAlignment="center"
                 android:text="정보"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/review"
@@ -156,7 +159,7 @@
                 android:layout_weight="1"
                 android:text="리뷰"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
 
         </LinearLayout>

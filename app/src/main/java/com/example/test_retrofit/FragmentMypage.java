@@ -290,7 +290,7 @@ public class FragmentMypage extends Fragment {
 //                    Log.e ("onSuccess", message);
 
                     if (status) {
-                        String BASEURL = "http://3.39.153.170/test/upload/profile/";
+                        String BASEURL = "http://43.200.106.233/test/upload/profile/";
                         String URL = BASEURL + message;
                         Log.e(TAG, "로드할 최종 URL" + URL);
 

@@ -39,7 +39,7 @@ public class AdapterUserList extends RecyclerView.Adapter<AdapterUserList.UserLi
     @Override
     public void onBindViewHolder(@NonNull AdapterUserList.UserListViewHolder holder, int position) {
         Glide.with(holder.profile.getContext()).
-                load("http://3.39.153.170/test/upload/profile/"+userItemList.get(position).getProfile_name()).
+                load("http://43.200.106.233/test/upload/profile/"+userItemList.get(position).getProfile_name()).
                 transform(new CenterCrop(), new RoundedCorners(70)).
                 into( holder.profile);
 

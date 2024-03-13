@@ -127,7 +127,7 @@ public class FragmentCafeReview extends Fragment {
 
 
         Glide.with(requireActivity()).
-                load("http://3.39.153.170/test/upload/profile/" + bundle.getString("profile")).
+                load("http://43.200.106.233/test/upload/profile/" + bundle.getString("profile")).
                 transform(new CenterCrop(), new RoundedCorners(70)).
                 into(profile);
 

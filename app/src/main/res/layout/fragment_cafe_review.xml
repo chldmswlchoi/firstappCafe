@@ -20,7 +20,7 @@
             android:text="작성자의 카페 추천 이유"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="17sp"
+            android:textSize="25sp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
 
@@ -38,6 +38,7 @@
 
             <ImageView
                 android:id="@+id/profile"
+                android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -54,7 +55,7 @@
                 android:layout_gravity="center"
                 android:text="카페 한 줄 소개"
                 android:textColor="#FF9800"
-                android:textSize="14dp"
+                android:textSize="25dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 />
@@ -67,16 +68,18 @@
         <View
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
             android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:background="#27FFCD60" />
+            android:layout_height="1dp"
+            android:background="#FFC107" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="유저들의 리뷰"
             android:textColor="@color/black"
-            android:textSize="17dp"
+            android:textSize="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             />
@@ -129,8 +132,9 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:background="#27FFCD60"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="#FFC107"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"/>
 

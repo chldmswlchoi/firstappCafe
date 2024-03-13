@@ -39,7 +39,7 @@ public class SubLayout extends LinearLayout {
 
             // 이미지 로드 라이브러리 사용 ImageUrl to Image
             Glide.with(this)
-                    .load("http://3.39.153.170/test/upload/review/" + image_array.get(i))
+                    .load("http://43.200.106.233/test/upload/review/" + image_array.get(i))
                     .override(300, 300)
                     .centerCrop()
                     .placeholder(R.drawable.ic_launcher_foreground)

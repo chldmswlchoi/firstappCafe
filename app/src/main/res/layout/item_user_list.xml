@@ -10,8 +10,8 @@
 
         <ImageView
             android:id="@+id/profile"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="5dp"
             android:src="@drawable/cafe1"
@@ -34,8 +34,8 @@
             android:layout_marginEnd="10dp"
             android:layout_marginStart="5dp"
             android:text="닉네임"
-            android:textColor="#3E2807"
-            android:textSize="16sp"
+            android:textColor="#000000"
+            android:textSize="25sp"
             android:layout_gravity="center_vertical"
             />
 

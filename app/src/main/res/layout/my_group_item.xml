@@ -27,8 +27,8 @@
                 android:layout_marginEnd="15dp"
                 android:text="모임제목"
                 android:textColor="#3E2807"
-                android:textSize="17sp"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="30sp"
+                android:layout_marginBottom="5dp"/>
 
             <TextView
                 android:id="@+id/cafe"
@@ -38,8 +38,8 @@
                 android:layout_marginEnd="15dp"
                 android:text="카페명"
                 android:textColor="#3E2807"
-                android:textSize="17sp"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="25sp"
+                android:layout_marginBottom="5dp"/>
 
             <TextView
                 android:id="@+id/date"
@@ -49,7 +49,7 @@
                 android:layout_marginEnd="15dp"
                 android:text="날짜"
                 android:textColor="#3E2807"
-                android:textSize="17sp"
+                android:textSize="20sp"
                 android:layout_marginBottom="10dp"/>
 
 
@@ -155,7 +155,8 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="#27FFCD60" />
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="#FFC107" />
 
 </LinearLayout>

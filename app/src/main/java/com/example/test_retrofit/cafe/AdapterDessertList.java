@@ -54,7 +54,7 @@ public class AdapterDessertList extends RecyclerView.Adapter<AdapterDessertList.
 
         //        프로필 사진 홀드 해주는 과정
         Glide.with(holder.cafe_image.getContext()).
-                load("http://3.39.153.170/test/upload/cafe/" + cafeList.getImage_array().get(0)).
+                load("http://43.200.106.233/test/upload/cafe/" + cafeList.getImage_array().get(0)).
                 transform(new CenterCrop(), new RoundedCorners(20)).
                 into(holder.cafe_image);
 

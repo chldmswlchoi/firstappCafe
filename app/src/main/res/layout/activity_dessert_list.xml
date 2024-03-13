@@ -22,9 +22,9 @@
             android:text="디저트"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="#3E2807"
+            android:textColor="#301D01"
             />
 
 
@@ -59,9 +59,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dessert_list"
+        android:layout_margin="6dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
         android:background="#FFFFFF">
     </androidx.recyclerview.widget.RecyclerView>
 

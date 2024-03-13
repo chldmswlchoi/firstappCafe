@@ -15,7 +15,7 @@ public class NetWorkHelper {
     private ApiService apiService;
     public static NetWorkHelper netWorkHelper = new NetWorkHelper();
 
-    private static final String BASE_URL ="http://3.39.153.170/";
+    private static final String BASE_URL ="http://43.200.106.233/";
 
     private NetWorkHelper(){
 

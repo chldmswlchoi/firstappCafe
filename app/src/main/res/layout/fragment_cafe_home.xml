@@ -17,7 +17,7 @@
         <LinearLayout
             android:id="@+id/made_cafe"
             android:layout_width="match_parent"
-            android:layout_height="195dp"
+            android:layout_height="300dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="20dp"
@@ -77,8 +77,8 @@
 
                     <View
                         android:id="@+id/dessert"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:background="@drawable/cupcake"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -108,8 +108,8 @@
 
                     <View
                         android:id="@+id/brunch"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:background="@drawable/bread"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -139,8 +139,8 @@
 
                     <View
                         android:id="@+id/fruit"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:background="@drawable/oven"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -170,8 +170,8 @@
 
                     <View
                         android:id="@+id/vegan"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:background="@drawable/bread_pin"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

@@ -80,7 +80,7 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         {
             Log.e(TAG,"ViewType Left");
             Glide.with(((LeftViewHolder) holder).profile.getContext()).
-                    load("http://3.39.153.170/test/upload/profile/"+chatList.get(position).getProfile_name()).
+                    load("http://43.200.106.233/test/upload/profile/"+chatList.get(position).getProfile_name()).
                     transform(new CenterCrop(), new RoundedCorners(70)).
                     into(((LeftViewHolder) holder).profile);
             ((LeftViewHolder) holder).name.setText(chatList.get(position).getNickname());
@@ -103,12 +103,12 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         {
             Log.e(TAG,"ViewType LEFT_IMAGE");
             Glide.with(((LeftImageHolder) holder).profile.getContext()).
-                    load("http://3.39.153.170/test/upload/profile/"+chatList.get(position).getProfile_name()).
+                    load("http://43.200.106.233/test/upload/profile/"+chatList.get(position).getProfile_name()).
                     transform(new CenterCrop(), new RoundedCorners(70)).
                     into(((LeftImageHolder) holder).profile);
 
             Glide.with(((LeftImageHolder) holder).image.getContext())
-                    .load("http://3.39.153.170/test/upload/chat/"+chatList.get(position).getMessage())
+                    .load("http://43.200.106.233/test/upload/chat/"+chatList.get(position).getMessage())
                     .error(R.drawable.image)
                     .into((((LeftImageHolder) holder).image));
 
@@ -120,7 +120,7 @@ public class AdapterChat extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             Log.e(TAG,"ViewType Right_Image");
 
             Glide.with(((RightImageHolder) holder).image.getContext())
-                    .load("http://3.39.153.170/test/upload/chat/"+chatList.get(position).getMessage())
+                    .load("http://43.200.106.233/test/upload/chat/"+chatList.get(position).getMessage())
                     .error(R.drawable.image)
                     .into((((RightImageHolder) holder).image));
 

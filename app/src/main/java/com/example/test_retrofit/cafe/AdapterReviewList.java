@@ -63,7 +63,7 @@ public class AdapterReviewList extends RecyclerView.Adapter<AdapterReviewList.Re
         holder.star.setRating(reviewList.get(position).getStar());
 
         Glide.with(holder.profile.getContext()).
-                load("http://3.39.153.170/test/upload/profile/" + reviewList.get(position).getProfile()).
+                load("http://43.200.106.233/test/upload/profile/" + reviewList.get(position).getProfile()).
                 transform(new CenterCrop(), new RoundedCorners(50)).
                 into(holder.profile);
 

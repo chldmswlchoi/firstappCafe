@@ -40,7 +40,7 @@ public class AdapterjoinGroup extends RecyclerView.Adapter<AdapterjoinGroup.join
         DTOGroupResponse.GroupDTO specificItems = joinGroupItemList.get(position);
 
         Glide.with(holder.profile.getContext()).
-                load("http://3.39.153.170/test/upload/profile/"+specificItems.getProfile()).
+                load("http://43.200.106.233/test/upload/profile/"+specificItems.getProfile()).
                 into(holder.profile);
 
         holder.cafe.setText(specificItems.getCafe());

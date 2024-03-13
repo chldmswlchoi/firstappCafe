@@ -19,8 +19,8 @@
         android:text="찜한 카페"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:textColor="#F62D1B03"
+        android:textSize="30sp"
+        android:textColor="#F6000000"
         android:layout_marginBottom="10dp"
         />
 

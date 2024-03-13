@@ -6,7 +6,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 public interface InterfaceEmail {
-    String LOGIN_URL ="http://3.39.153.170/";
+    String LOGIN_URL ="http://43.200.106.233/";
 
     @FormUrlEncoded
     @POST("test/email_check.php")

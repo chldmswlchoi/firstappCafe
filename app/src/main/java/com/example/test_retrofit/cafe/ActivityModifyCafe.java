@@ -89,7 +89,7 @@ public class ActivityModifyCafe extends AppCompatActivity {
     // 남아 있는 서버 이미지 명을 모아둔 리스트
     private ArrayList<String> images = new ArrayList<>();
     //    인텐트로 받은 이미지명 리스트
-    private String BaseURL = "http://3.39.153.170/test/upload/cafe/";
+    private String BaseURL = "http://43.200.106.233/test/upload/cafe/";
 
     private String ereview, etitle, ecafe, eroad_address, enumber, esns_url, final_number;
     //    editText에 있는 값을 받을 변수

@@ -61,7 +61,7 @@ public class ConnectionThread extends Thread{
             sleep(1000);
             Log.e(TAG,"try");
             //로컬 호스트의 주소를 가져온다.
-            socket = new Socket("3.39.153.170",9000);
+            socket = new Socket("43.200.106.233",9000);
             Log.e(TAG,"socket = new Socket");
             ActivityChatRoom.mySocket = socket;
             // 클라이언트의 소켓 객체 생성

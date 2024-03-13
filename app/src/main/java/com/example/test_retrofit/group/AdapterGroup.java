@@ -43,7 +43,7 @@ public class AdapterGroup extends RecyclerView.Adapter <AdapterGroup.GroupViewHo
 
 //        프로필 사진 홀드 해주는 과정
         Glide.with(holder.profile.getContext()).
-                load("http://3.39.153.170/test/upload/profile/"+itemlist.getProfile()).
+                load("http://43.200.106.233/test/upload/profile/"+itemlist.getProfile()).
                 centerCrop().
                 into(holder.profile);
 

@@ -23,9 +23,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.example.test_retrofit.MyDialog;
 import com.example.test_retrofit.R;
+import com.example.test_retrofit.MyDialog;
 import com.example.test_retrofit.Retrofit.NetWorkHelper;
 import com.example.test_retrofit.group.Activity_findCafe;
 import com.example.test_retrofit.user.PreferenceHelper;
@@ -356,7 +355,7 @@ public class Activity_madeCafe extends AppCompatActivity {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 //            이 클래스는 출력 스트림이며(데이터가 나가는 통로의 역할에 대해 규정),
 //            데이터가 바이트 배열에 기록된다.
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 20, byteArrayOutputStream);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
 //            지정된 출력 스트림에대한 비트맵 버전을 압축한다. 즉 사진 용량 줄이는 과정
 //            매개변수 1 : 압축된 이미지의 형식, 품질 (0-100),
 //            압축된 데이터를 쓰기 위한(데이터를 내보낸다는 뜻) 출력 스트림

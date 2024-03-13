@@ -61,7 +61,6 @@ public class FragmentGroupList extends Fragment {
         // 꼭 new 해야지 생성된다고!!!!!
         made_group = view.findViewById(R.id.register);
         recyclerView = view.findViewById(R.id.group_list);
-        button = view.findViewById(R.id.button);
         // 프래그먼트는 inflate 해준 view.findView 해야함
         linearLayoutManager = new LinearLayoutManager(getActivity());
         //프래그먼트는 getActivity() 로 해줘야함
@@ -76,13 +75,7 @@ public class FragmentGroupList extends Fragment {
 //        getGroupData();
         //레트로핏 통신 서버에서 데이터 가져옴
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ActivityChatRoom.class);
-                startActivity(intent);
-            }
-        });
+
 
         //플로팅 버튼 모임 만들기 버튼 클릭 시
         made_group.setOnClickListener(new View.OnClickListener() {

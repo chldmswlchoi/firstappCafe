@@ -52,7 +52,7 @@ public class AdapterImageSlider extends RecyclerView.Adapter<AdapterImageSlider.
 
         public void bindSliderImage(String imageURL) {
             Glide.with(context)
-                    .load("http://3.39.153.170/test/upload/cafe/"+imageURL)
+                    .load("http://43.200.106.233/test/upload/cafe/"+imageURL)
                     .error(R.drawable.image)
                     .into(mImageView);
         }
